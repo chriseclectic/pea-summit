@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["pea_summit"]
+
+[tool.setuptools.package-data]
+pea_summit = ["saved_data.zip"]
+
+[project]
+name = "pea-summit"
+version = "23.0.0"
+description = "IBM Quantum Summit practitioners forum PEA utility module."
+authors = [
+    {name = "Christopher J. Wood", email = "cjwood@us.ibm.com"},
+]
+license = {file="LICENSE.txt"}
+readme = "README.md"
+dependencies = [
+    "qiskit==0.44.3",
+    "numpy",
+    "matplotlib",
+    "networkx",
+    "pandas",
+    "seaborn",
+    "pylatexenc",
+    "qiskit-ibm-runtime @ git+https://github.com/Qiskit/qiskit-ibm-runtime.git@experimental",
+]
+
+[project.urls]
+repository = "https://github.com/chriseclectic/pea-summit"
+
+[project.optional-dependencies]
+dev = [
+    "black~=22.0",
+    "astroid==2.14.2",
+    "pylint==2.16.2",
+    "sphinx~=7.1.2",
+    "jupyter-sphinx>=0.4.0",
+    "qiskit-sphinx-theme~=1.15",
+    "sphinx-autodoc-typehints>=1.22.0",
+    "sphinx-design~=0.5.0",
+    "pygments>=2.4",
+    "nbsphinx",
+    "ipykernel",
+]

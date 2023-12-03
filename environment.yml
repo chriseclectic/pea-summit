@@ -1,0 +1,11 @@
+name: pea-summit
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - jupyter
+  - tox
+  - pip
+  - pip:
+    - . # Install this package and all its dependencies
